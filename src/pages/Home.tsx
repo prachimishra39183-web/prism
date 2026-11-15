@@ -1,22 +1,26 @@
-import { showroomProducts } from "../data/showroomProducts";
-import ProductShowroom from "../components/ProductShowroom";
+
 import { useState } from 'react';
 import {
   ArrowDown,
   ArrowRight,
   ChevronLeft,
   ChevronRight,
+
   Heart,
   
 } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 import Header from '../components/Header';
 import ProductTile from '../components/ProductTile';
 import CollectionCard from '../components/CollectionCard';
 import Footer from '../components/Footer';
 import Preloader from "../components/Preloader";
-
-import { products, categories } from '../data/products';
+import {
+  products,
+  categories,
+  categoryShowcase,
+} from '../data/products';
 const advantages = [
   {
     number: "01",
@@ -264,8 +268,6 @@ export default function Home() {
 
       
 
-{/* ============== PRISM FLOATING JEWELLERY GALLERY ============== */}
-
 <section className="prism-gallery" id="arrivals">
 
   <div className="prism-gallery-heading">
@@ -288,89 +290,69 @@ export default function Home() {
     ))}
   </div>
 
-  {/* OPEN JEWELLERY GALLERY */}
+  {/* CATEGORY IMAGE GALLERY */}
 
-  <div className="prism-floating-gallery">
+  <div className="prism-floating-gallery category-image-gallery">
 
-    {visibleProducts.map((product, index) => (
-      <div
-        className={`prism-piece piece-${index % 6}`}
-        key={product.code}
-        style={{ animationDelay: `${index * 0.2}s` }}
-      >
+    {categoryShowcase
+      .filter((category) =>
+        activeCategory === "All" ||
+        category.name.toLowerCase() === activeCategory.toLowerCase()
+      )
+      .map((category, index) => (
 
-        <div className="prism-display">
+        <div
+          className={`prism-piece piece-${index % 6}`}
+          key={category.name}
+        >
 
-          {/* 3D ORBIT */}
-          <div className="prism-orbit orbit-a" />
-          <div className="prism-orbit orbit-b" />
-          <div className="prism-orbit orbit-c" />
+          <div className="prism-display category-prism-display">
 
-          {/* GLOW */}
-          <div className="prism-halo" />
+            <div className="prism-orbit orbit-a" />
+            <div className="prism-orbit orbit-b" />
+            <div className="prism-orbit orbit-c" />
 
-          {/* IMAGE OR 3D PLACEHOLDER */}
-          <div className="prism-image-area">
+            <div className="prism-halo" />
 
-            {product.image ? (
+            <div className="prism-image-area category-prism-image">
+
               <img
-                src={product.image}
-                alt={product.name}
+                src={category.images[0]}
+                alt={category.name}
                 className="prism-product-image"
                 loading="lazy"
               />
-            ) : (
-              <div className={`prism-3d-placeholder placeholder-${product.category.toLowerCase()}`}>
-                <div className="prism-gem">
-                  <span>✧</span>
-                </div>
-                <div className="prism-placeholder-ring" />
-                <div className="prism-placeholder-label">
-                  IMAGE PLACEHOLDER
-                </div>
-              </div>
-            )}
+
+            </div>
+
+            <span className="prism-star star-a">✧</span>
+            <span className="prism-star star-b">✦</span>
+            <span className="prism-star star-c">✧</span>
 
           </div>
 
-          {/* FLOATING DECORATION */}
-          <span className="prism-star star-a">✧</span>
-          <span className="prism-star star-b">✦</span>
-          <span className="prism-star star-c">✧</span>
+          <div className="prism-piece-info">
+            <span>PRISM COLLECTION</span>
 
-          {/* WISHLIST */}
-          <button
-            className={`prism-wishlist ${liked.includes(product.code) ? "liked" : ""}`}
-            onClick={() => toggleLike(product.code)}
-            aria-label="Add to wishlist"
-          >
-            <Heart
-              size={18}
-              fill={liked.includes(product.code) ? "currentColor" : "none"}
-            />
-          </button>
+            <h3>{category.name}</h3>
 
-        </div>
+            <div className="prism-piece-actions">
+              <small>{category.description}</small>
 
-        {/* FLOATING PRODUCT LABEL - NOT A CARD */}
-        <div className="prism-piece-info">
-          <span>{product.category}</span>
-          <h3>{product.name}</h3>
-          <div className="prism-piece-actions">
-            <small>{product.code}</small>
-            <button
-              onClick={() => setCart((current) => current + 1)}
-              aria-label={`Add ${product.name} to cart`}
-            >
-              Add to bag +
-            </button>
+              <Link to={category.link}>
+                Explore ↗
+              </Link>
+            </div>
           </div>
+
         </div>
 
-      </div>
-    ))}
+      ))}
 
-    {visibleProducts.length === 0 && (
+    {categoryShowcase.filter((category) =>
+      activeCategory === "All" ||
+      category.name.toLowerCase() === activeCategory.toLowerCase()
+    ).length === 0 && (
       <p className="prism-no-products">
         New creations arriving soon.
       </p>
@@ -474,9 +456,9 @@ export default function Home() {
       <div className="team-footer">
         <span>BUILT ON TRUST. DRIVEN BY EXCELLENCE.</span>
 
-        <a href="/about" className="team-button">
-          Know About Us <span>↗</span>
-        </a>
+<Link to="/about" className="know-about-btn">
+  Know About Us <span>↗</span>
+</Link>
       </div>
     </section>
 

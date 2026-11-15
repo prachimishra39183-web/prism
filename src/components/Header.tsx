@@ -54,18 +54,18 @@ export default function Header({ cart }: HeaderProps) {
 >
   About us
 </Link>
-          <a href="#impact" onClick={() => setMobileOpen(false)}>Impact</a>
+         <Link
+  to="/impact"
+  onClick={() => setMobileOpen(false)}
+>
+  Impact
+</Link>
         </nav>
 
         <div className="header-actions">
-          <button aria-label="Search">
-            <Search size={19} />
-          </button>
+          
 
-          <button aria-label="Sign in">
-            <UserRound size={20} />
-            <span>Sign in</span>
-          </button>
+          
 
           <button aria-label="Cart">
             <ShoppingBag size={20} />

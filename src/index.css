@@ -3313,6 +3313,65 @@ button { cursor: pointer; border: 0; background: transparent; }
 .prism-about a{color:inherit;text-decoration:none}
 .prism-about button{font:inherit}
 .prism-section{position:relative;padding:clamp(76px,10vw,150px) max(6vw,24px)}
+
+/* ===== REDUCE ABOUT PAGE SECTION SPACING ===== */
+
+.prism-about .prism-section {
+  padding-top: 65px !important;
+  padding-bottom: 65px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Intro section */
+.prism-about .prism-intro {
+  padding-top: 65px !important;
+  padding-bottom: 65px !important;
+}
+
+/* Why choose Prism */
+.prism-about .prism-advantage {
+  padding-top: 65px !important;
+  padding-bottom: 65px !important;
+}
+
+/* Orbit section */
+.prism-about .prism-orbit-section {
+  padding-top: 65px !important;
+  padding-bottom: 65px !important;
+}
+
+/* Process section */
+.prism-about .prism-process {
+  padding-top: 65px !important;
+  padding-bottom: 65px !important;
+}
+
+/* Values section */
+.prism-about .prism-values {
+  padding-top: 65px !important;
+  padding-bottom: 65px !important;
+}
+
+/* Final CTA */
+.prism-about .prism-cta {
+  padding-top: 85px;
+  padding-bottom: 35px;
+}
+
+/* Mobile spacing */
+@media (max-width: 768px) {
+  .prism-about .prism-section {
+    padding-top: 45px !important;
+    padding-bottom: 45px !important;
+  }
+
+  .prism-about .prism-cta {
+    padding-top: 65px;
+    padding-bottom: 25px;
+  }
+}
+
 .prism-eyebrow{display:inline-flex;align-items:center;gap:12px;color:var(--prism-gold);font-size:10px;letter-spacing:.22em;font-weight:700}
 .prism-eyebrow i{width:26px;height:1px;background:var(--prism-gold);display:inline-block}
 .prism-about h2{font-family:'Playfair Display',serif;font-weight:500;letter-spacing:-.045em;font-size:clamp(46px,6.4vw,88px);line-height:.98;margin:22px 0}
@@ -4495,4 +4554,52 @@ button { cursor: pointer; border: 0; background: transparent; }
   .prism-halo {
     animation: none !important;
   }
+}
+.know-about-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: #b4935e;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.know-about-btn span {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.know-about-btn:hover {
+  background: #8b6938;
+  transform: translateY(-3px);
+}
+.category-image-gallery .category-prism-image {
+  overflow: hidden;
+}
+
+.category-image-gallery .category-prism-image img {
+  transition: transform 0.8s ease;
+}
+
+.category-image-gallery .prism-piece:hover .category-prism-image img {
+  transform: scale(1.15);
+}
+
+.category-image-gallery .prism-piece-info {
+  text-align: center;
+}
+
+.category-image-gallery .prism-piece-actions a {
+  color: #b4935e;
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+.category-image-gallery .prism-piece-actions a:hover {
+  color: #80613b;
 }

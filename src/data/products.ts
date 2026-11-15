@@ -86,3 +86,61 @@ export const categories = [
   'Earring',
   'Bracelet',
 ];
+
+export const categoryShowcase = [
+  {
+    name: 'Necklace',
+    images: [
+      '/necklace.png',
+      '/necklace.png',
+      '/necklace.png',
+    ],
+  },
+  {
+    name: 'Pendant',
+    images: [
+      '/pd5.png',
+         '/pd5.png',
+         '/pd5.png',
+    ],
+  },
+  {
+    name: 'Ring',
+    images: [
+      '/ring.png',
+        '/ring.png',
+          '/ring.png',
+    ],
+  },
+  {
+    name: 'Earring',
+    images: [
+      '/earring.png',
+      '/earring.png',
+      '/earring.png',
+    ],
+  },
+  {
+    name: 'Bracelet',
+    images: [
+       '/pd2.png',
+         '/pd2.png',
+         '/pd2.png',
+    ],
+  },
+  {
+    name: 'Bangle',
+    images: [
+      '/pd6.png',
+      
+    ],
+  },
+  {
+    name: 'Mangalsutra',
+    images: [
+     '/pd3.png',
+         '/pd3.png',
+         '/pd3.png',
+    ],
+  },
+];

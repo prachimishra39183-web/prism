@@ -114,11 +114,16 @@ export default function About() {
         </div>
         <div className="intro-grid">
           <div className="intro-heading prism-reveal">
-            <span className="giant-index">01</span>
-            <h2>Made with<br /><em>meaning.</em></h2>
-          </div>
+  <span className="giant-index">01</span>
+
+  <img
+    src="/int.png"
+    alt="PRISM International Jewellery Craftsmanship"
+    className="intro-heading-image"
+  />
+</div>
           <div className="intro-copy prism-reveal">
-            <h3>Who we are<span>.</span></h3>
+            
             <p className="intro-lead">We are PRISM International — bringing together jewellery craftsmanship, manufacturing precision, and a commitment to meaningful business partnerships.</p>
             <p>Our focus is on creating jewellery that meets the expectations of global B2B partners. From thoughtful design and careful sourcing to precision manufacturing and quality inspection, every stage reflects our commitment to detail.</p>
             <a className="text-link" href="#our-process">EXPLORE OUR PROCESS <ArrowUpRight size={17} /></a>

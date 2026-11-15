@@ -1,10 +1,13 @@
-
+import { showroomProducts } from "../data/showroomProducts";
+import ProductShowroom from "../components/ProductShowroom";
 import { useState } from 'react';
 import {
   ArrowDown,
   ArrowRight,
   ChevronLeft,
   ChevronRight,
+  Heart,
+  
 } from 'lucide-react';
 
 import Header from '../components/Header';
@@ -221,148 +224,171 @@ export default function Home() {
 
     </section>
 
-       
-{/* ARRIVALS SHOWCASE */}
+ 
 
+    
 <section className="arrivals-showcase">
 
-  <div className="arrivals-layout">
+  {/* ARRIVALS HEADING */}
+  <div className="arrivals-header">
+    <h2>Our Collection</h2>
+  </div>
 
-    {/* LEFT: PRODUCT CARDS */}
+  {/* FULL WIDTH VIDEO */}
+  <div className="arrivals-video-wrap">
 
-    <div className="arrivals-left">
+    <video
+      className="arrivals-video"
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="auto"
+    >
+      <source src="/jew.mp4" type="video/mp4" />
+    </video>
 
-      <div className="arrivals-header">
-        <div>
-          <span className="arrivals-eyebrow">
-            DISCOVER OUR COLLECTION
-          </span>
-        </div>
+    <div className="arrivals-video-overlay" />
 
-        <div className="arrivals-controls">
-          <button aria-label="Previous arrivals">
-            <ChevronLeft size={20} />
-          </button>
+    <div className="arrivals-video-content">
+      <span>THE ART OF FINE JEWELLERY</span>
 
-          <button aria-label="Next arrivals">
-            <ChevronRight size={20} />
-          </button>
-        </div>
-      </div>
-
-      <div className="arrivals-rail">
-
-        {products.map((product, index) => (
-          <article
-            className={`arrival-card arrival-card-${index % 4}`}
-            key={product.code}
-          >
-
-           
-<div className={`arrival-art arrival-art-${index % 4}`}>
-
-  <img
-    src={product.image}
-    alt={product.name || product.code}
-    className="arrival-product-image"
-    loading="lazy"
-  />
-
-  <span className="arrival-card-number">
-    0{index + 1}
-  </span>
-
-</div>
-
-
-          </article>
-        ))}
-
-      </div>
-
+    
     </div>
 
-
-    {/* RIGHT: VIDEO SHOWCASE */}
-
-    <div className="arrivals-video-wrap">
-
-      <video
-        className="arrivals-video"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-      >
-        <source src="/jew.mp4" type="video/mp4" />
-      </video>
-
-      <div className="arrivals-video-overlay" />
-
-      <div className="arrivals-video-content">
-        <span>THE ART OF FINE JEWELLERY</span>
-
-        <h3>
-          Crafted to
-          <br />
-          <em>Captivate.</em>
-        </h3>
-
-
-        
-      </div>
-
-      <div className="video-frame-line" />
-
-    </div>
+    <div className="video-frame-line" />
 
   </div>
 
 </section>
 
+      
 
-        {/* PRODUCT SECTION */}
+{/* ============== PRISM FLOATING JEWELLERY GALLERY ============== */}
 
-        <section className="product-section" id="arrivals">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">The latest edit</p>
-              <h2>New arrivals</h2>
-            </div>
+<section className="prism-gallery" id="arrivals">
 
-            <a href="#shop">
-              View all pieces
-              <ArrowRight size={15} />
-            </a>
-          </div>
+  <div className="prism-gallery-heading">
+    <span>THE PRISM COLLECTION</span>
+    <h2>Beauty in <i>Every Dimension.</i></h2>
+    <p>Discover extraordinary creations, designed to exist beyond time.</p>
+  </div>
 
-          <div className="category-tabs">
-            {categories.map((category) => (
-              <button
-                className={
-                  activeCategory === category ? 'selected' : ''
-                }
-                key={category}
-                onClick={() => setActiveCategory(category)}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+  {/* CATEGORY FILTERS */}
 
-          <div className="product-rail">
-            {visibleProducts.map((product) => (
-              <ProductTile
-                key={product.code}
-                product={product}
-                liked={liked.includes(product.code)}
-                onLike={() => toggleLike(product.code)}
-                onAdd={() => setCart((current) => current + 1)}
+  <div className="prism-categories">
+    {categories.map((category) => (
+      <button
+        key={category}
+        className={activeCategory === category ? "active" : ""}
+        onClick={() => setActiveCategory(category)}
+      >
+        {category}
+      </button>
+    ))}
+  </div>
+
+  {/* OPEN JEWELLERY GALLERY */}
+
+  <div className="prism-floating-gallery">
+
+    {visibleProducts.map((product, index) => (
+      <div
+        className={`prism-piece piece-${index % 6}`}
+        key={product.code}
+        style={{ animationDelay: `${index * 0.2}s` }}
+      >
+
+        <div className="prism-display">
+
+          {/* 3D ORBIT */}
+          <div className="prism-orbit orbit-a" />
+          <div className="prism-orbit orbit-b" />
+          <div className="prism-orbit orbit-c" />
+
+          {/* GLOW */}
+          <div className="prism-halo" />
+
+          {/* IMAGE OR 3D PLACEHOLDER */}
+          <div className="prism-image-area">
+
+            {product.image ? (
+              <img
+                src={product.image}
+                alt={product.name}
+                className="prism-product-image"
+                loading="lazy"
               />
-            ))}
+            ) : (
+              <div className={`prism-3d-placeholder placeholder-${product.category.toLowerCase()}`}>
+                <div className="prism-gem">
+                  <span>✧</span>
+                </div>
+                <div className="prism-placeholder-ring" />
+                <div className="prism-placeholder-label">
+                  IMAGE PLACEHOLDER
+                </div>
+              </div>
+            )}
+
           </div>
-        </section>
+
+          {/* FLOATING DECORATION */}
+          <span className="prism-star star-a">✧</span>
+          <span className="prism-star star-b">✦</span>
+          <span className="prism-star star-c">✧</span>
+
+          {/* WISHLIST */}
+          <button
+            className={`prism-wishlist ${liked.includes(product.code) ? "liked" : ""}`}
+            onClick={() => toggleLike(product.code)}
+            aria-label="Add to wishlist"
+          >
+            <Heart
+              size={18}
+              fill={liked.includes(product.code) ? "currentColor" : "none"}
+            />
+          </button>
+
+        </div>
+
+        {/* FLOATING PRODUCT LABEL - NOT A CARD */}
+        <div className="prism-piece-info">
+          <span>{product.category}</span>
+          <h3>{product.name}</h3>
+          <div className="prism-piece-actions">
+            <small>{product.code}</small>
+            <button
+              onClick={() => setCart((current) => current + 1)}
+              aria-label={`Add ${product.name} to cart`}
+            >
+              Add to bag +
+            </button>
+          </div>
+        </div>
+
+      </div>
+    ))}
+
+    {visibleProducts.length === 0 && (
+      <p className="prism-no-products">
+        New creations arriving soon.
+      </p>
+    )}
+
+  </div>
+
+  <div className="prism-gallery-bottom">
+    <span>PRISM JEWELLERY</span>
+    <span>TIMELESS. EFFORTLESS. EXTRAORDINARY.</span>
+  </div>
+
+</section>
+
+{/* ============== END PRISM GALLERY ============== */}
+
+{/* ================= END JEWELLERY UNIVERSE ================= */}
+
 
         {/* BEST SELLERS VIDEO SECTION */}
 
@@ -538,7 +564,7 @@ export default function Home() {
 
         <textarea
           placeholder="Tell us about your requirements..."
-          rows="4"
+         rows={4}
           required
         />
 

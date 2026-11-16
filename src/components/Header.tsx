@@ -31,7 +31,9 @@ export default function Header({ cart }: HeaderProps) {
         </a>
 
         <nav className={mobileOpen ? 'main-nav mobile-visible' : 'main-nav'}>
-          <a href="#top" onClick={() => setMobileOpen(false)}>Home</a>
+          <Link to="/" onClick={() => setMobileOpen(false)}>
+  Home
+</Link>
 
           <button
             className={menu === 'jewellery' ? 'nav-trigger active' : 'nav-trigger'}

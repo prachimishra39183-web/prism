@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import { Link } from "react-router-dom";
 
-import Header from '../components/Header';
+
 import ProductTile from '../components/ProductTile';
 import CollectionCard from '../components/CollectionCard';
 import Footer from '../components/Footer';
@@ -129,7 +129,7 @@ export default function Home() {
 
    
 
-      <Header cart={cart} />
+   
 
       <main id="top">
 
@@ -148,7 +148,7 @@ export default function Home() {
     playsInline
     preload="metadata"
   >
-    <source src="/home1.mp4" type="video/mp4" />
+    <source src="/bst.mp4" type="video/mp4" />
   </video>
 
   {/* Soft overlay - keeps video visible */}
@@ -375,6 +375,8 @@ export default function Home() {
         {/* BEST SELLERS VIDEO SECTION */}
 
 <section className="bestseller-hero">
+   
+ 
   <video
     className="bestseller-background-video"
     autoPlay
@@ -382,7 +384,7 @@ export default function Home() {
     loop
     playsInline
   >
-    <source src="/bst.mp4" type="video/mp4" />
+    <source src="/home.mp4" type="video/mp4" />
   </video>
 
   <div className="bestseller-overlay"></div>
@@ -390,9 +392,7 @@ export default function Home() {
   <div className="bestseller-heading">
     <p className="eyebrow">PRISM INTERNATIONAL</p>
 
-    <h2>
-      Our <em>Best Sellers.</em>
-    </h2>
+  
 
   
   </div>

@@ -3335,11 +3335,6 @@ button { cursor: pointer; border: 0; background: transparent; }
   padding-bottom: 65px !important;
 }
 
-/* Orbit section */
-.prism-about .prism-orbit-section {
-  padding-top: 65px !important;
-  padding-bottom: 65px !important;
-}
 
 /* Process section */
 .prism-about .prism-process {
@@ -3772,147 +3767,217 @@ button { cursor: pointer; border: 0; background: transparent; }
 }
 /* =================================
    PRISM LUXURY FOOTER
-================================= */
 
 .footer {
   position: relative;
-  padding: 85px 8% 25px;
-  background:
-    radial-gradient(circle at 10% 10%, #ffffff 0%, transparent 35%),
-    linear-gradient(135deg, #f8f5ef, #eee7db);
-  color: #28231d;
+  width: 100%;
+  padding: 75px 7% 0;
   overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(255,255,255,.95),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #f4e9d9,
+      #ead8bf,
+      #f8f0e5
+    );
+
+  border-top: 1px solid rgba(166,125,72,.3);
+  color: #46372a;
 }
 
-/* Subtle decorative glow */
+/* MAIN FOOTER */
 
-.footer::before {
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  right: -150px;
-  top: -180px;
-  border-radius: 50%;
-  background: rgba(193, 155, 96, .10);
-  filter: blur(80px);
-  pointer-events: none;
-}
-
-.footer-top,
-.footer-links,
-.footer-bottom {
-  position: relative;
-  z-index: 1;
-}
-
-/* TOP SECTION */
-
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 55px;
-  border-bottom: 1px solid rgba(135, 108, 68, .22);
-}
-
-.footer .wordmark {
-  font-family: Georgia, serif;
-  font-size: 38px;
-  letter-spacing: 3px;
-  text-decoration: none;
-  color: #30271d;
-  font-weight: 500;
-}
-
-.footer .wordmark span {
-  display: block;
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  letter-spacing: 8px;
-  margin-top: 7px;
-  color: #a47b42;
-}
-
-.footer-top p {
-  font-family: Georgia, serif;
-  font-size: 21px;
-  line-height: 1.6;
-  color: #756b5e;
-  font-style: italic;
-  text-align: right;
-}
-
-/* FOOTER LINKS */
-
-.footer-links {
+.footer-main {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 45px;
-  padding: 65px 0;
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
+  gap: 55px;
+  padding-bottom: 65px;
 }
 
-.footer-links > div {
+/* BRAND */
+
+.footer-brand {
+  max-width: 310px;
+}
+
+.footer-logo img {
+  width: 165px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 22px;
+}
+
+.footer-brand p {
+  color: #796957;
+  font-size: 13px;
+  line-height: 1.9;
+  margin-bottom: 25px;
+}
+
+/* APP LINKS */
+
+.footer-apps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-apps img {
+  width: 125px;
+  height: 42px;
+  object-fit: contain;
+}
+
+/* COLUMNS */
+
+.footer-column {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 17px;
+  gap: 16px;
 }
 
-.footer-links b {
-  font-family: Georgia, serif;
-  font-size: 19px;
-  font-weight: 500;
-  color: #342b20;
+.footer-column h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  font-weight: 600;
+  color: #cd0909;
   margin-bottom: 8px;
-  position: relative;
 }
 
-.footer-links b::after {
-  content: "";
-  display: block;
-  width: 28px;
-  height: 1px;
-  background: #b58b51;
-  margin-top: 12px;
-  transition: width .4s ease;
-}
-
-.footer-links > div:hover b::after {
-  width: 55px;
-}
-
-.footer-links a {
-  color: #766e63;
+.footer-column > a {
+  color: #cfd2d4;
+  font-size: 12px;
+  line-height: 1.8;
   text-decoration: none;
-  font-size: 13px;
-  letter-spacing: .3px;
-  position: relative;
-  transition: color .3s ease, transform .3s ease;
+  transition: color .3s ease;
 }
 
-.footer-links a:hover {
-  color: #a47b42;
-  transform: translateX(5px);
+.footer-column > a:hover {
+  color: #a4773d;
 }
 
-/* BOTTOM SECTION */
+/* CONTACT */
+
+.footer-contact {
+  max-width: 320px;
+}
+
+.footer-contact > a {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.footer-contact > a span {
+  color: #a77d46;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+/* SOCIAL ICONS */
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 10px;
+}
+
+.footer-socials a {
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(157,117,65,.3);
+  border-radius: 50%;
+  background: rgba(255,255,255,.5);
+
+  transition: all .3s ease;
+}
+
+.footer-socials a:hover {
+  background: #987044;
+  transform: translateY(-4px);
+}
+
+.footer-socials img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+/* BOTTOM BAR */
 
 .footer-bottom {
-  border-top: 1px solid rgba(135, 108, 68, .22);
-  padding-top: 25px;
+  min-height: 65px;
+  border-top: 1px solid rgba(189, 229, 13, 0.25);
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  color: #938879;
+  justify-content: space-between;
+  gap: 20px;
+
+  color: #89745d;
   font-size: 11px;
-  letter-spacing: .5px;
 }
 
-.footer-bottom span:nth-child(2) {
-  color: #756448;
-  cursor: pointer;
+.footer-credit a {
+  color: #946b3d;
+  font-weight: 700;
+  text-decoration: none;
 }
+
+.footer-credit a:hover {
+  color: #493626;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 1000px) {
+  .footer-main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px;
+  }
+}
+
+@media(max-width: 600px) {
+  .footer {
+    padding: 55px 22px 0;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 20px;
+  }
+
+  .footer-brand,
+  .footer-contact {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+
+  .footer-column h4 {
+    font-size: 21px;
+  }
+
+  .footer-bottom {
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.7;
+  }
+}
+
 
 /* RESPONSIVE */
 
@@ -4602,4 +4667,1034 @@ button { cursor: pointer; border: 0; background: transparent; }
 
 .category-image-gallery .prism-piece-actions a:hover {
   color: #80613b;
+}
+/* =====================================
+   PRISM PREMIUM JEWELLERY GALLERY
+===================================== */
+
+.prism-gallery {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 95px 5% 55px;
+
+  background:
+    radial-gradient(
+      ellipse at 10% 15%,
+      rgba(218, 174, 112, 0.22),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 90% 75%,
+      rgba(193, 151, 102, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(255,255,255,0.95),
+      transparent 75%
+    ),
+    linear-gradient(
+      135deg,
+      #f4eadb,
+      #e9d8c1,
+      #f8f1e7,
+      #eee0ce
+    );
+
+  isolation: isolate;
+}
+
+/* Decorative background circles */
+
+.prism-gallery::before {
+  content: "";
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  top: 12%;
+  left: -250px;
+
+  border: 1px solid rgba(166, 119, 61, 0.16);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 35px rgba(166,119,61,0.025),
+    0 0 0 75px rgba(166,119,61,0.025);
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+.prism-gallery::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -200px;
+  bottom: 5%;
+
+  border: 1px solid rgba(166,119,61,0.2);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 30px rgba(166,119,61,0.035),
+    0 0 0 65px rgba(166,119,61,0.025);
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* =====================================
+   HEADING
+===================================== */
+
+.prism-gallery-heading {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.prism-gallery-heading > span {
+  color: #a47b43;
+  font-size: 10px;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+
+.prism-gallery-heading h2 {
+  margin: 16px 0;
+  color: #382b20;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(38px, 5vw, 65px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.prism-gallery-heading h2 i {
+  color: #a77c45;
+}
+
+.prism-gallery-heading p {
+  color: #796957;
+  font-size: 13px;
+  letter-spacing: .4px;
+}
+
+/* =====================================
+   CATEGORY FILTERS
+===================================== */
+
+.prism-categories {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-bottom: 35px;
+}
+
+.prism-categories button {
+  padding: 10px 22px;
+
+  border: 1px solid rgba(157, 117, 65, .3);
+  border-radius: 30px;
+
+  background: rgba(255,255,255,.45);
+
+  color: #70573b;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.prism-categories button:hover,
+.prism-categories button.active {
+  background: #87613a;
+  border-color: #87613a;
+  color: #fff;
+}
+
+/* =====================================
+   GALLERY GRID
+===================================== */
+
+.prism-floating-gallery {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 24px 18px;
+
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+}
+
+/* =====================================
+   BIGGER PRODUCT CARDS
+===================================== */
+
+.prism-piece {
+  position: relative;
+  min-width: 0;
+  padding: 13px;
+
+  background: rgba(255,255,255,.48);
+
+  border: 1px solid rgba(169, 128, 75, .25);
+
+  border-radius: 5px 5px 35px 5px;
+
+  box-shadow:
+    0 12px 35px rgba(95, 66, 34, .07),
+    inset 0 1px 0 rgba(255,255,255,.85);
+
+  transition:
+    transform .45s ease,
+    box-shadow .45s ease,
+    border-color .45s ease;
+}
+
+.prism-piece:hover {
+  transform: translateY(-9px);
+
+  border-color: rgba(169,128,75,.65);
+
+  box-shadow:
+    0 22px 45px rgba(95,66,34,.14),
+    0 5px 15px rgba(95,66,34,.05);
+}
+
+/* Product display */
+
+.prism-display {
+  position: relative;
+  width: 100%;
+  min-height: 340px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #fffdf8 0%,
+      #f2e6d5 55%,
+      #e6d3ba 100%
+    );
+
+  border-radius: 3px 3px 28px 3px;
+}
+
+/* Product image */
+
+.category-prism-image {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 340px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prism-product-image {
+  width: 88%;
+  height: 88%;
+
+  object-fit: contain;
+
+  transition: transform .6s cubic-bezier(.2,.7,.2,1);
+}
+
+.prism-piece:hover .prism-product-image {
+  transform: scale(1.09);
+}
+
+/* Decorative halo */
+
+.prism-halo {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+
+  border: 1px solid rgba(181,140,80,.22);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 18px rgba(181,140,80,.035),
+    0 0 0 38px rgba(181,140,80,.025);
+}
+
+/* Orbit details */
+
+.prism-orbit {
+  position: absolute;
+  border: 1px solid rgba(181,140,80,.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbit-a {
+  width: 270px;
+  height: 270px;
+}
+
+.orbit-b {
+  width: 320px;
+  height: 320px;
+}
+
+.orbit-c {
+  width: 370px;
+  height: 370px;
+}
+
+/* Sparkles */
+
+.prism-star {
+  position: absolute;
+  z-index: 3;
+  color: #b58a50;
+  opacity: .7;
+}
+
+.star-a {
+  top: 18%;
+  left: 16%;
+  font-size: 20px;
+}
+
+.star-b {
+  right: 15%;
+  top: 35%;
+  font-size: 15px;
+}
+
+.star-c {
+  bottom: 15%;
+  left: 23%;
+  font-size: 17px;
+}
+
+/* =====================================
+   CARD INFORMATION
+===================================== */
+
+.prism-piece-info {
+  padding: 20px 10px 12px;
+}
+
+.prism-piece-info > span {
+  color: #a27b48;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.prism-piece-info h3 {
+  margin: 9px 0 13px;
+
+  color: #382b20;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.prism-piece-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  padding-top: 13px;
+
+  border-top: 1px solid rgba(157,117,65,.2);
+}
+
+.prism-piece-actions small {
+  color: #82715f;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.prism-piece-actions a {
+  flex-shrink: 0;
+
+  color: #956b3c;
+  font-size: 10px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: color .3s ease;
+}
+
+.prism-piece-actions a:hover {
+  color: #382b20;
+}
+
+/* Bottom label */
+
+.prism-gallery-bottom {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 55px;
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(157,117,65,.25);
+
+  color: #9a7952;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width: 1000px) {
+  .prism-floating-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .prism-display,
+  .category-prism-image {
+    min-height: 300px;
+    height: 300px;
+  }
+}
+
+@media(max-width: 600px) {
+  .prism-gallery {
+    padding: 65px 16px 35px;
+  }
+
+  .prism-floating-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .prism-piece {
+    padding: 7px;
+  }
+
+  .prism-display,
+  .category-prism-image {
+    min-height: 190px;
+    height: 190px;
+  }
+
+  .prism-halo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .orbit-a {
+    width: 160px;
+    height: 160px;
+  }
+
+  .orbit-b {
+    width: 190px;
+    height: 190px;
+  }
+
+  .orbit-c {
+    width: 220px;
+    height: 220px;
+  }
+
+  .prism-piece-info {
+    padding: 13px 5px 8px;
+  }
+
+  .prism-piece-info h3 {
+    font-size: 20px;
+  }
+
+  .prism-piece-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .prism-gallery-bottom {
+    gap: 12px;
+    font-size: 7px;
+  }
+}
+.prism-gallery {
+  background:
+    linear-gradient(
+      rgba(250, 242, 229, 0.35),
+      rgba(250, 242, 229, 0.45)
+    ),
+    url("/gallery-bg.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* =========================================
+   PRISM STRENGTH SECTION
+   LUXURY EDITORIAL BENTO DESIGN
+========================================= */
+
+.prism-strength-section {
+  position: relative;
+  width: 100%;
+  padding: 110px 7%;
+
+  display: grid;
+  grid-template-columns: 0.85fr 1.4fr;
+  align-items: center;
+  gap: 75px;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(211,169,112,.19),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 95% 85%,
+      rgba(181,140,80,.13),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #f8f1e7,
+      #eee0cd,
+      #f9f4ec
+    );
+}
+
+/* Background decoration */
+
+.prism-strength-section::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  left: -280px;
+  top: 10%;
+
+  border: 1px solid rgba(166,119,61,.17);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 45px rgba(166,119,61,.025),
+    0 0 0 90px rgba(166,119,61,.02);
+
+  z-index: -1;
+  pointer-events: none;
+}
+
+.prism-strength-section::after {
+  content: "P";
+  position: absolute;
+  right: 3%;
+  bottom: -150px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 450px;
+  line-height: 1;
+
+  color: rgba(160,117,66,.045);
+
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.strength-intro {
+  position: relative;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.strength-intro h2 {
+  margin: 25px 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(48px, 5vw, 76px);
+  font-weight: 400;
+  line-height: .98;
+
+  color: #392b20;
+}
+
+.strength-intro h2 em {
+  color: #a77a42;
+  font-weight: 400;
+}
+
+.strength-intro > p {
+  max-width: 390px;
+
+  color: #776653;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.strength-signature {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin-top: 38px;
+
+  color: #a27b4a;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.signature-line {
+  width: 40px;
+  height: 1px;
+  background: #a27b4a;
+}
+
+.strength-big-number {
+  position: absolute;
+  right: 0;
+  bottom: -45px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 170px;
+  line-height: 1;
+
+  color: rgba(160,117,66,.09);
+  pointer-events: none;
+}
+
+/* =========================================
+   BENTO GRID
+========================================= */
+
+.strength-bento {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.strength-card {
+  position: relative;
+  min-height: 340px;
+  padding: 22px;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  border: 1px solid rgba(171,127,72,.27);
+  border-radius: 5px 5px 38px 5px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.9),
+      rgba(239,224,203,.8)
+    );
+
+  box-shadow:
+    0 12px 30px rgba(83,58,32,.07),
+    inset 0 1px 0 rgba(255,255,255,.9);
+
+  transition:
+    transform .5s ease,
+    box-shadow .5s ease,
+    border-color .5s ease;
+}
+
+.strength-card:hover {
+  transform: translateY(-9px);
+
+  border-color: rgba(167,122,66,.65);
+
+  box-shadow:
+    0 25px 50px rgba(83,58,32,.13),
+    inset 0 1px 0 white;
+}
+
+/* Card header */
+
+.strength-card-top {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #a17a48;
+}
+
+.strength-card-top span {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   CARD VISUALS
+========================================= */
+
+.strength-card-visual {
+  position: relative;
+
+  height: 175px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #a47a45;
+}
+
+/* GLOBAL */
+
+.global-circle {
+  position: absolute;
+  border: 1px solid rgba(164,122,69,.25);
+  border-radius: 50%;
+}
+
+.circle-one {
+  width: 125px;
+  height: 125px;
+}
+
+.circle-two {
+  width: 165px;
+  height: 165px;
+}
+
+.circle-three {
+  width: 205px;
+  height: 205px;
+  border-style: dashed;
+  opacity: .5;
+}
+
+.global-visual > svg {
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 8px 10px rgba(164,122,69,.15));
+}
+
+/* QUALITY */
+
+.quality-diamond {
+  width: 125px;
+  height: 125px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: rotate(45deg);
+
+  border: 1px solid rgba(164,122,69,.4);
+
+  background: linear-gradient(
+    135deg,
+    #fffaf1,
+    #e7d2b3
+  );
+
+  box-shadow: 0 15px 30px rgba(116,81,42,.1);
+}
+
+.quality-diamond svg {
+  transform: rotate(-45deg);
+}
+
+.quality-orbit {
+  position: absolute;
+  width: 185px;
+  height: 185px;
+
+  border: 1px solid rgba(164,122,69,.2);
+  border-radius: 50%;
+}
+
+/* CRAFT */
+
+.craft-visual {
+  background:
+    radial-gradient(
+      circle,
+      rgba(207,171,118,.23),
+      transparent 65%
+    );
+}
+
+.craft-shape {
+  position: relative;
+  z-index: 2;
+
+  width: 140px;
+  height: 140px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 35px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,.8),
+    rgba(221,192,151,.6)
+  );
+
+  border: 1px solid rgba(164,122,69,.3);
+
+  transform: rotate(-12deg);
+
+  box-shadow: 0 15px 30px rgba(116,81,42,.1);
+
+  transition: transform .5s ease;
+}
+
+.strength-card:hover .craft-shape {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.craft-shine {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+
+  border: 1px solid rgba(164,122,69,.25);
+  border-radius: 50%;
+}
+
+/* DELIVERY */
+
+.delivery-visual {
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(207,171,118,.22),
+      transparent 70%
+    );
+}
+
+.delivery-visual svg {
+  position: relative;
+  z-index: 2;
+
+  filter: drop-shadow(0 12px 12px rgba(116,81,42,.15));
+
+  transition: transform .5s ease;
+}
+
+.strength-card:hover .delivery-visual svg {
+  transform: translateX(9px);
+}
+
+.delivery-track {
+  position: absolute;
+  width: 75%;
+  height: 1px;
+  bottom: 37px;
+
+  border-top: 1px dashed rgba(164,122,69,.5);
+}
+
+/* =========================================
+   CARD TEXT
+========================================= */
+
+.strength-card-info {
+  position: relative;
+  z-index: 3;
+}
+
+.strength-card-info h3 {
+  margin-bottom: 9px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  font-weight: 500;
+
+  color: #463326;
+}
+
+.strength-card-info p {
+  max-width: 260px;
+
+  color: #806d58;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.strength-card-index {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 42px;
+
+  color: rgba(164,122,69,.13);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width: 1050px) {
+  .prism-strength-section {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .strength-intro {
+    min-height: 300px;
+  }
+
+  .strength-big-number {
+    bottom: -30px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width: 600px) {
+  .prism-strength-section {
+    padding: 70px 18px;
+    gap: 35px;
+  }
+
+  .strength-intro {
+    min-height: 280px;
+  }
+
+  .strength-intro h2 {
+    font-size: 49px;
+  }
+
+  .strength-big-number {
+    font-size: 120px;
+  }
+
+  .strength-bento {
+    gap: 11px;
+  }
+
+  .strength-card {
+    min-height: 285px;
+    padding: 13px;
+    border-radius: 4px 4px 25px 4px;
+  }
+
+  .strength-card-top span {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .strength-card-top svg {
+    width: 19px;
+  }
+
+  .strength-card-visual {
+    height: 135px;
+  }
+
+  .circle-three {
+    width: 145px;
+    height: 145px;
+  }
+
+  .circle-two {
+    width: 120px;
+    height: 120px;
+  }
+
+  .circle-one {
+    width: 90px;
+    height: 90px;
+  }
+
+  .global-visual > svg {
+    width: 65px;
+  }
+
+  .quality-diamond {
+    width: 90px;
+    height: 90px;
+  }
+
+  .quality-diamond svg {
+    width: 55px;
+  }
+
+  .quality-orbit {
+    width: 135px;
+    height: 135px;
+  }
+
+  .craft-shape {
+    width: 100px;
+    height: 100px;
+  }
+
+  .craft-shape svg {
+    width: 65px;
+  }
+
+  .delivery-visual svg {
+    width: 70px;
+  }
+
+  .strength-card-info h3 {
+    font-size: 21px;
+  }
+
+  .strength-card-info p {
+    font-size: 10px;
+  }
+
+  .strength-card-index {
+    font-size: 30px;
+    right: 10px;
+  }
 }

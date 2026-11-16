@@ -160,22 +160,136 @@ export default function About() {
         <div className="marquee-caption"><span>BUILT ON EXPERIENCE</span><span>DRAG / SCROLL TO EXPLORE</span></div>
       </section>
 
-      <section className="prism-orbit-section prism-section">
-        <div className="orbit-copy prism-reveal">
-          <Eyebrow>OUR COMMITMENT, IN MOTION</Eyebrow>
-          <h2>One vision.<br /><em>Many strengths.</em></h2>
-          <p>Every detail has a role. Every stage adds value. Together, they create a partnership built around precision and trust.</p>
+    
+<section className="prism-strength-section prism-section">
+
+  {/* LEFT EDITORIAL CONTENT */}
+  <div className="strength-intro prism-reveal">
+
+    <Eyebrow>OUR COMMITMENT, IN MOTION</Eyebrow>
+
+    <h2>
+      One vision.
+      <br />
+      <em>Many strengths.</em>
+    </h2>
+
+    <p>
+      Every detail has a role. Every stage adds value.
+      Together, they create a partnership built around
+      precision, craftsmanship and trust.
+    </p>
+
+    <div className="strength-signature">
+      <span className="signature-line"></span>
+      <span>THE PRISM STANDARD</span>
+    </div>
+
+    <div className="strength-big-number">04</div>
+
+  </div>
+
+  {/* RIGHT BENTO CARDS */}
+  <div className="strength-bento prism-reveal">
+
+    {/* GLOBAL NETWORK */}
+    <div className="strength-card strength-global">
+
+      <div className="strength-card-top">
+        <span>01 / REACH</span>
+        <Globe2 size={24} strokeWidth={1.3} />
+      </div>
+
+      <div className="strength-card-visual global-visual">
+        <div className="global-circle circle-one"></div>
+        <div className="global-circle circle-two"></div>
+        <div className="global-circle circle-three"></div>
+        <Globe2 size={95} strokeWidth={0.7} />
+      </div>
+
+      <div className="strength-card-info">
+        <h3>Global Network</h3>
+        <p>Connecting opportunities and partnerships across markets.</p>
+      </div>
+
+      <span className="strength-card-index">01</span>
+
+    </div>
+
+    {/* QUALITY CONTROL */}
+    <div className="strength-card strength-quality">
+
+      <div className="strength-card-top">
+        <span>02 / ASSURANCE</span>
+        <ShieldCheck size={24} strokeWidth={1.3} />
+      </div>
+
+      <div className="strength-card-visual quality-visual">
+        <div className="quality-diamond">
+          <ShieldCheck size={75} strokeWidth={0.8} />
         </div>
-        <div className="orbit-stage prism-reveal">
-          <div className="orbit-ring orbit-ring-outer" />
-          <div className="orbit-ring orbit-ring-inner" />
-          <div className="orbit-core"><Gem size={42} strokeWidth={1.1} /><span>PRISM</span><small>INTERNATIONAL</small></div>
-          <div className="orbit-node node-one"><Globe2 /><span>GLOBAL<br />NETWORK</span></div>
-          <div className="orbit-node node-two"><ShieldCheck /><span>QUALITY<br />CONTROL</span></div>
-          <div className="orbit-node node-three"><Gem /><span>CRAFT<br />PRECISION</span></div>
-          <div className="orbit-node node-four"><Truck /><span>RELIABLE<br />DELIVERY</span></div>
+        <span className="quality-orbit"></span>
+      </div>
+
+      <div className="strength-card-info">
+        <h3>Quality Control</h3>
+        <p>Thoughtful inspection and consistent standards at every stage.</p>
+      </div>
+
+      <span className="strength-card-index">02</span>
+
+    </div>
+
+    {/* CRAFT PRECISION */}
+    <div className="strength-card strength-craft">
+
+      <div className="strength-card-top">
+        <span>03 / CRAFT</span>
+        <Gem size={24} strokeWidth={1.3} />
+      </div>
+
+      <div className="strength-card-visual craft-visual">
+        <div className="craft-shape">
+          <Gem size={100} strokeWidth={0.65} />
         </div>
-      </section>
+        <div className="craft-shine"></div>
+      </div>
+
+      <div className="strength-card-info">
+        <h3>Craft Precision</h3>
+        <p>Where considered design meets manufacturing excellence.</p>
+      </div>
+
+      <span className="strength-card-index">03</span>
+
+    </div>
+
+    {/* RELIABLE DELIVERY */}
+    <div className="strength-card strength-delivery">
+
+      <div className="strength-card-top">
+        <span>04 / COMMITMENT</span>
+        <Truck size={24} strokeWidth={1.3} />
+      </div>
+
+      <div className="strength-card-visual delivery-visual">
+        <div className="delivery-track"></div>
+        <Truck size={100} strokeWidth={0.8} />
+      </div>
+
+      <div className="strength-card-info">
+        <h3>Reliable Delivery</h3>
+        <p>Dependable coordination from production to destination.</p>
+      </div>
+
+      <span className="strength-card-index">04</span>
+
+    </div>
+
+  </div>
+
+</section>
+
 
       <section className="prism-process prism-section" id="our-process">
         <div className="process-head prism-reveal"><div><Eyebrow>FROM CONCEPT TO CREATION</Eyebrow><h2>The art of<br /><em>making brilliance.</em></h2></div><p>Every creation follows a carefully managed journey, where precision and quality guide each step.</p></div>

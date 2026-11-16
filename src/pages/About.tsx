@@ -4,7 +4,7 @@ import {
   ShieldCheck, ChevronRight, MoveRight,
   BusIcon
 } from "lucide-react";
-
+import { Link } from "react-router-dom";
 const whyChooseUs = [
   {
     image: "/exp.png",
@@ -320,7 +320,9 @@ export default function About() {
 
       <section className="prism-cta">
         <div className="cta-orbit" /><div className="cta-glow" />
-        <div className="cta-content prism-reveal"><Eyebrow>LET'S BUILD SOMETHING EXCEPTIONAL</Eyebrow><h2>Your vision.<br /><em>Our craftsmanship.</em></h2><p>Discover a manufacturing partnership built around quality, precision, and trust.</p><a href="/contact" className="cta-button">START A CONVERSATION <ArrowUpRight size={18} /></a></div>
+        <div className="cta-content prism-reveal"><Eyebrow>LET'S BUILD SOMETHING EXCEPTIONAL</Eyebrow><h2>Your vision.<br /><em>Our craftsmanship.</em></h2><p>Discover a manufacturing partnership built around quality, precision, and trust.</p><Link to="/#enquiry" className="cta-button">
+  START A CONVERSATION <ArrowUpRight size={18} />
+</Link></div>
         <div className="cta-footer"><span>PRISM INTERNATIONAL</span><span>CRAFTED FOR THE WORLD · MUMBAI, INDIA</span></div>
       </section>
     </main>

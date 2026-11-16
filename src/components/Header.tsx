@@ -26,9 +26,9 @@ export default function Header({ cart }: HeaderProps) {
           {mobileOpen ? <X /> : <Menu />}
         </button>
 
-        <a className="wordmark" href="#top">
-          PRISM<span>JEWELLERY</span>
-        </a>
+       <Link className="wordmark" to="/" onClick={() => setMobileOpen(false)}>
+  PRISM<span>JEWELLERY</span>
+</Link>
 
         <nav className={mobileOpen ? 'main-nav mobile-visible' : 'main-nav'}>
           <Link to="/" onClick={() => setMobileOpen(false)}>
@@ -62,18 +62,24 @@ export default function Header({ cart }: HeaderProps) {
 >
   Impact
 </Link>
+<Link
+  to="/enquiry"
+  className="nav-enquiry-link"
+  onClick={() => {
+    setMobileOpen(false);
+    setMenu(null);
+  }}
+>
+  Enquiry <span>↗</span>
+</Link>
         </nav>
-
+          
         <div className="header-actions">
           
 
           
 
-          <button aria-label="Cart">
-            <ShoppingBag size={20} />
-            <span>Cart</span>
-            {cart > 0 && <b>{cart}</b>}
-          </button>
+        
         </div>
       </header>
 

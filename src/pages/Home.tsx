@@ -122,7 +122,7 @@ export default function Home() {
 
   return (
       <>
-    <Preloader />
+   
 
     
     <div className="site-shell">
@@ -464,7 +464,7 @@ export default function Home() {
 
       {/* LUXURY ENQUIRY SECTION */}
 
-<section className="jewel-enquiry">
+    <section id="enquiry" className="jewel-enquiry">
   <div className="enquiry-overlay"></div>
 
   <div className="enquiry-content">

@@ -1,7 +1,11 @@
 
 import { useEffect, useState } from "react";
 
-export default function Preloader() {
+export default function Preloader({
+  onComplete,
+}: {
+  onComplete: () => void;
+}) {
   const [phase, setPhase] = useState<"show" | "exit" | "done">("show");
   const [ready, setReady] = useState(false);
 
@@ -35,14 +39,14 @@ export default function Preloader() {
     };
   }, []);
 
-  const enterWebsite = () => {
-    setPhase("exit");
+ const enterWebsite = () => {
+  setPhase("exit");
 
-    window.setTimeout(() => {
-      setPhase("done");
-    }, 900);
-  };
-
+  window.setTimeout(() => {
+    setPhase("done");
+    onComplete?.();
+  }, 900);
+};
   if (phase === "done") return null;
 return (
   <div
